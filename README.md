@@ -2,6 +2,7 @@
 
 #### Info:
 Bachelor Thesis about creating Video Game Maps procedurally using Generative Adversarial Networks. 
+
 Questions: tobias.christoph@student.uibk.ac.at
 
 For the creation of data `https://github.com/pecarprimoz/procedural-gen-dipl` was used to create height maps with according biomes. These maps were then analysed for traversability (`code/dataset/sketchify.py`) - which are the labels for the GAN and resemble the sketch a user can draw as an input.
