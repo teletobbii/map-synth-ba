@@ -4,6 +4,8 @@ import matplotlib.pyplot as plt
 import matplotlib.image as mpimg
 from glob import glob, has_magic
 from PIL import Image
+import time
+
 
 # Just to display the height and biome map after reading it
 def showMaps(height_map, biome_map):
@@ -22,19 +24,11 @@ def showMaps(height_map, biome_map):
 
 # https://stackoverflow.com/questions/55827778/elevation-xyz-data-to-slope-gradient-map-using-python
 # Slope gradients
-def contouring(height_map):
+def createContouredMap(height_map):
     print("*** Starting contouring ***")   
-    print(height_map.shape)
-
-    print(height_map[:,:].size)
-
-    #fig,ax=plt.subplots(1,1)
-    #cp = ax.contour(X, Y, Z)
-    #plt.show()
 
     # Using the Sobel filter to figure out the steepness of the gradients of the heightmap
     sobelMap = np.zeros((128,128))
-    import time
     start = time.time()
     rows = height_map.shape[0]
     columns = height_map.shape[0]
@@ -51,10 +45,15 @@ def contouring(height_map):
 
     # Displaying only steepness values above 115
     retval, thresholded = cv.threshold(sobelMap, 115, 255, cv.THRESH_BINARY)
-    thresholded.astype(np.uint8)
     
+    # Filtering out areas of non-traversability that are smaller than 35 pixel to get rid of speckles
+    thresholdedPatched = np.array(thresholded, dtype='int16')
+    cv.filterSpeckles(thresholdedPatched, 0, 35, 255)[0]
+
+    thresholdedPatched.astype(np.uint8)
+
     print("*** Done contouring ***")
-    return thresholded
+    return thresholdedPatched
 
 
 
@@ -64,8 +63,9 @@ def createTraversibilityMap(height_map, biome_map):
     print("*** Starting creation of traversibility-map ***")
 
     # Creating the steepness from the heightmap to add to the non traversable biomes
-    gradientImage = contouring(height_map)
-    #img = Image.fromarray(np.uint8(gradientImage), 'L')
+    gradientImage = createContouredMap(height_map)
+
+    img = Image.fromarray(np.uint8(gradientImage), 'L')
     #img.show()
 
     biomeColours = {
@@ -82,7 +82,6 @@ def createTraversibilityMap(height_map, biome_map):
     map = np.zeros((128,128,3))
     # Get just the biome -> (map[:,:,0]) or just the biome map -> (map[:,:,1]) or just the traverse map -> (map[:,:,2]) 
     
-    import time
     start = time.time()
     rows = biome_map.shape[0]
     columns = biome_map.shape[0]
@@ -112,11 +111,12 @@ def createTraversibilityMap(height_map, biome_map):
     end = time.time()
     #print("time of loop:" + str(1000 * round((end - start), 5)) + "ms")
 
-    # Filtering out areas of non-traversability that are smaller than 20 pixels
     traversabilityMap = np.array(map[:,:,2], dtype='int16')
-    cv.filterSpeckles(traversabilityMap, 0, 35, 255)[0]
-    img = Image.fromarray(np.uint8(traversabilityMap), 'L')
-    img.show()
+    
+    #img = Image.fromarray(np.uint8(traversabilityMap), 'L')
+    #traversabilityMap.show()
+    
+    cv.imwrite(r"C:\Users\tobia\BA\map-synth-ba\dataset\raw_h_b_maps\3_t.png", traversabilityMap)
 
     print("*** Done with traversibility-map ***")
 
@@ -124,18 +124,17 @@ def createTraversibilityMap(height_map, biome_map):
 def main():
     print("***|| Starting sketchifier ||***")
     
-    import time
     start = time.time()
     #reading the two different maps
-    hmap = cv.imread(r"C:\Users\tobia\OneDrive\Desktop\BA\data\presketch\1_h.png", cv.IMREAD_GRAYSCALE)
-    bmap = cv.imread(r"C:\Users\tobia\OneDrive\Desktop\BA\data\presketch\1_b.png", cv.IMREAD_COLOR)
+    hmap = cv.imread(r"C:\Users\tobia\BA\map-synth-ba\dataset\raw_h_b_maps\3_h.png", cv.IMREAD_GRAYSCALE)
+    bmap = cv.imread(r"C:\Users\tobia\BA\map-synth-ba\dataset\raw_h_b_maps\3_b.png", cv.IMREAD_COLOR)
     readDataTime = time.time()
     print("finished reading the map after " + str(1000 * round((readDataTime - start), 5)) + "ms")
 
     # inverting the height map to make brighter = taller
     hmap = cv.bitwise_not(hmap)
 
-    #showMaps(hmap,bmap)
+    showMaps(hmap,bmap)
 
     createTraversibilityMap(hmap, bmap)
     
