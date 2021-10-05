@@ -3,5 +3,8 @@
 .DS_Store
 
 # Ignore note folder
-/notes
-/BA/init/files
+/ba/notes
+/ba/init/files
+/helpnotes
+/dataset/old
+/code/gan/pix2pix/gen.pth.tar
