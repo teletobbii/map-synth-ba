@@ -3,11 +3,17 @@
 #### Info:
 Bachelor Thesis about creating Video Game Maps procedurally using Generative Adversarial Networks. 
 
-Questions: tobias.christoph@student.uibk.ac.at
+Contact: tobias.christoph@student.uibk.ac.at
 
-For the creation of data `https://github.com/pecarprimoz/procedural-gen-dipl` was used to create height maps with according biomes. These maps were then analysed for traversability (`code/dataset/sketchify.py`) - which are the labels for the GAN and resemble the sketch a user can draw as an input.
+For the creation of data `https://github.com/pecarprimoz/procedural-gen-dipl` was used to create height maps with according biomes. These maps were then analysed for traversability (`code/dataset/sketchify.py`) - which are the labels for the GAN and resemble the sketch a user can draw as an input. As base of the GAN Aladdin Persson's implementation `https://github.com/aladdinpersson/Machine-Learning-Collection/tree/master/ML/Pytorch/GANs/Pix2Pix` was used.
 
 Weights used on the generated maps can be downloaded [here](https://github.com/teletobbii/map-synth-ba/releases/tag/v0.1)
+
+The code to the finished project can be found here [map-synth-ba/code/](https://github.com/teletobbii/map-synth-ba/tree/main/code). The scripts for the creation of the dataset creation as well as the creation of a traversability-map are under [map-synth-ba/code/scripts/dataset_creation/](https://github.com/teletobbii/map-synth-ba/tree/main/code/scripts/dataset_creation). 
+Scripts to post-process the generated output are found here [map-synth-ba/code/scripts/post/](https://github.com/teletobbii/map-synth-ba/tree/main/code/scripts/post).
+
+All files regarding the Pix2Pix GAN are under [map-synth-ba/code/gan/pix2pix](https://github.com/teletobbii/map-synth-ba/tree/main/code/gan/pix2pix). Training files must be placed in the [train](https://github.com/teletobbii/map-synth-ba/tree/main/code/gan/pix2pix/data/train) folder (a sample of 1000 training files can already be found there). Specific settings can be made in the [utils.py](https://github.com/teletobbii/map-synth-ba/tree/main/code/gan/pix2pix/utils.py) file. To start training, run the [train.py](https://github.com/teletobbii/map-synth-ba/tree/main/code/gan/pix2pix/train.py) file. 
+
 
 Topic description:
 ### Topic 2 - Map (Room/Terrain) Synthesis for Low-Poly 3D Scenes
