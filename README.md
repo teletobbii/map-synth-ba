@@ -15,19 +15,22 @@ Scripts to post-process the generated output are found here: [map-synth-ba/code/
 All files regarding the Pix2Pix GAN are under [map-synth-ba/code/gan/pix2pix](https://github.com/teletobbii/map-synth-ba/tree/main/code/gan/pix2pix). Training files must be placed in the [train](https://github.com/teletobbii/map-synth-ba/tree/main/code/gan/pix2pix/data/train) folder (a sample of 1000 training files can already be found there). Specific settings can be made in the [config.py](https://github.com/teletobbii/map-synth-ba/tree/main/code/gan/pix2pix/config.py) file. To start training, run the [train.py](https://github.com/teletobbii/map-synth-ba/tree/main/code/gan/pix2pix/train.py) file. 
 
 
-###Examples:
+### Examples:
 
 Overview of the entire projects structure:
+
 ![overview](https://user-images.githubusercontent.com/58395640/147882554-78b57086-d22d-4a73-94f2-93d642c1f688.PNG)
 
 A user can draw a simple sketch of the area of play that they want to be accessible. The network will then generate a corresponding biome and height-map.
+
 ![fixexample](https://user-images.githubusercontent.com/58395640/147882565-a2bf1f6a-1797-4ccc-a839-a231e5b16044.png)
 
 The final maps are rendered in Unity for demonstrative purposes:
+
 ![1fix](https://user-images.githubusercontent.com/58395640/147882588-eec5e337-b5d9-42c0-8151-0a8f0726e52a.png)
 
-Topic description:
-### Topic 2 - Map (Room/Terrain) Synthesis for Low-Poly 3D Scenes
+### Topic description:
+#### Map (Room/Terrain) Synthesis for Low-Poly 3D Scenes
 Maps in 3D scenes and video games play a crucial role to determine the setting and player experience. Forming terrain or designing the outlines of rooms and order of locations in a map is a resource consuming task [1]. Thus, procedural content generation aims to alleviate the time and memory burden by automatically synthesising maps and artefacts.
 
 The main goal of this Bachelor thesis comprises of generating low-poly maps w.r.t. to a certain style. The style is defined by input conditions such as text or rough sketches that are translated to labeled height or heat maps via deep learning and then transformed into a 3D scene via a deterministic parsing and rendering algorithm [1]. The most common deep learning model used for map synthesis are Generative Adversarial Networks (GANs) [2].
