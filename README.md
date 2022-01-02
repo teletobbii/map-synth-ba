@@ -9,10 +9,10 @@ For the creation of data `https://github.com/pecarprimoz/procedural-gen-dipl` wa
 
 Weights used on the generated maps can be downloaded [here](https://github.com/teletobbii/map-synth-ba/releases/tag/v0.1)
 
-The code to the finished project can be found here [map-synth-ba/code/](https://github.com/teletobbii/map-synth-ba/tree/main/code). The scripts for the creation of the dataset creation as well as the creation of a traversability-map are under [map-synth-ba/code/scripts/dataset_creation/](https://github.com/teletobbii/map-synth-ba/tree/main/code/scripts/dataset_creation). 
-Scripts to post-process the generated output are found here [map-synth-ba/code/scripts/post/](https://github.com/teletobbii/map-synth-ba/tree/main/code/scripts/post).
+The code to the finished project can be found here: [map-synth-ba/code/](https://github.com/teletobbii/map-synth-ba/tree/main/code). The scripts for the creation of the dataset creation as well as the creation of a traversability-map are under [map-synth-ba/code/scripts/dataset_creation/](https://github.com/teletobbii/map-synth-ba/tree/main/code/scripts/dataset_creation). 
+Scripts to post-process the generated output are found here: [map-synth-ba/code/scripts/post/](https://github.com/teletobbii/map-synth-ba/tree/main/code/scripts/post).
 
-All files regarding the Pix2Pix GAN are under [map-synth-ba/code/gan/pix2pix](https://github.com/teletobbii/map-synth-ba/tree/main/code/gan/pix2pix). Training files must be placed in the [train](https://github.com/teletobbii/map-synth-ba/tree/main/code/gan/pix2pix/data/train) folder (a sample of 1000 training files can already be found there). Specific settings can be made in the [utils.py](https://github.com/teletobbii/map-synth-ba/tree/main/code/gan/pix2pix/utils.py) file. To start training, run the [train.py](https://github.com/teletobbii/map-synth-ba/tree/main/code/gan/pix2pix/train.py) file. 
+All files regarding the Pix2Pix GAN are under [map-synth-ba/code/gan/pix2pix](https://github.com/teletobbii/map-synth-ba/tree/main/code/gan/pix2pix). Training files must be placed in the [train](https://github.com/teletobbii/map-synth-ba/tree/main/code/gan/pix2pix/data/train) folder (a sample of 1000 training files can already be found there). Specific settings can be made in the [config.py](https://github.com/teletobbii/map-synth-ba/tree/main/code/gan/pix2pix/config.py) file. To start training, run the [train.py](https://github.com/teletobbii/map-synth-ba/tree/main/code/gan/pix2pix/train.py) file. 
 
 
 Topic description:
