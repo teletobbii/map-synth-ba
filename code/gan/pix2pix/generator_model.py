@@ -84,6 +84,8 @@ class Generator(nn.Module):
         d4 = self.down3(d3)
         d5 = self.down4(d4)
         d6 = self.down5(d5)
+
+        #ADD
         bottleneck = self.bottleneck(d6)
         up1 = self.up1(bottleneck)
         up2 = self.up2(torch.cat([up1, d6], 1))
@@ -92,6 +94,11 @@ class Generator(nn.Module):
         up5 = self.up5(torch.cat([up4, d3], 1))
         up6 = self.up6(torch.cat([up5, d2], 1))
         return self.final_up(torch.cat([up6, d1], 1))
+
+
+        
+
+        
 
 
 def test():

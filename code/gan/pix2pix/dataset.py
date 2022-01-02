@@ -24,18 +24,12 @@ class MapDataset(Dataset):
         zero_image = np.zeros((128, 128), dtype=np.uint8)
         input_image = np.dstack((input_imageRaw, zero_image))
 
-        #print(image.shape)
-
         # modify data handler to deal with 4 channels (rgb + height) 
         target_imageB = image[:, 128:256, :]
         target_imageH = image[:, 256:384, :]
 
         # convert to 1 dimension (dot product) because read as 3d image 
         target_imageH_gray = np.dot(target_imageH[...,:3], [0.299, 0.587, 0.114])
-
-        #print(target_imageB.shape)
-        #print(target_imageH.shape)
-        #print(target_imageH_gray.shape)
 
         # add the two images together - now is 4d with rgb + height
         target_image = np.dstack((target_imageB, target_imageH_gray))
