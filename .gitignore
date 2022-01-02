@@ -5,7 +5,15 @@
 # Ignore note folder
 /ba/notes
 /ba/init/files
+/ba/pic/
+/ba/sources/
 /helpnotes
 /dataset/old
 /code/gan/pix2pix/gen.pth.tar
-/code/dataset/helpers
+/code/scripts/eval/
+/code/scripts/old/
+/dataset/new/notReady/
+/dataset/
+/helpnotes/
+/results/
+
