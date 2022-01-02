@@ -1,7 +1,7 @@
 # Map Synthesis for Low-Poly 3D Scenes using Generative Adversarial Networks
 
-#### Info:
-Bachelor Thesis about creating Video Game Maps procedurally using Generative Adversarial Networks. 
+### Abstract:
+In our ever growing digital world, the generation of novel data has become an increasingly vital role in all aspects of content generation. Procedural content generation (PCG) applied to the entertainment field of computer science is one of many examples where the synthesis of new content has been progressively enhanced by the application of machine learning. Generative Adversarial Networks (GAN), a popular deep learning framework, are applied to the creation of low-poly maps. In particular, the Pix2Pix approach will be utilised to generate elevation as well as biome-maps. Our approach also enables users to condition their desired maps both structurally and artistically. The input to the system will merely be a very minimal effort sketch that represents the area-of-play. For example, game designers could utilise the generated maps to easily create a number of diverse maps for video games. The generated maps are furthermore rendered for demonstrative purposes. Our results fit the desired structure defined in the input sketches and exhibit a lot of variety in the biomes. The scenes demonstrate great quality by illustrating clean and usable terrain which concludes that GANs are very applicable to this purpose.
 
 Contact: tobias.christoph@student.uibk.ac.at
 
