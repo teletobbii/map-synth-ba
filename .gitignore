@@ -8,8 +8,14 @@
 /ba/pic/
 /ba/sources/
 /helpnotes
-/dataset/old
 /code/gan/pix2pix/gen.pth.tar
+/code/gan/pix2pix/disc.pth.tar
+/code/gan/pix2pix/generator_model_old.py
+/code/gan/pix2pix/discriminator_model_old.py
+/code/gan/pix2pix/evaluation/old/
+/code/gan/pix2pix/data/4channel/
+/code/gan/pix2pix/data/samples/
+/code/gan/pix2pix/data/valOld/
 /code/scripts/eval/
 /code/scripts/old/
 /dataset/new/notReady/
