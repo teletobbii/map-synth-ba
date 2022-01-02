@@ -7,6 +7,8 @@ Questions: tobias.christoph@student.uibk.ac.at
 
 For the creation of data `https://github.com/pecarprimoz/procedural-gen-dipl` was used to create height maps with according biomes. These maps were then analysed for traversability (`code/dataset/sketchify.py`) - which are the labels for the GAN and resemble the sketch a user can draw as an input.
 
+Weights can be downloaded from:
+
 Topic description:
 ### Topic 2 - Map (Room/Terrain) Synthesis for Low-Poly 3D Scenes
 Maps in 3D scenes and video games play a crucial role to determine the setting and player experience. Forming terrain or designing the outlines of rooms and order of locations in a map is a resource consuming task [1]. Thus, procedural content generation aims to alleviate the time and memory burden by automatically synthesising maps and artefacts.
