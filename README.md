@@ -7,7 +7,8 @@ Questions: tobias.christoph@student.uibk.ac.at
 
 For the creation of data `https://github.com/pecarprimoz/procedural-gen-dipl` was used to create height maps with according biomes. These maps were then analysed for traversability (`code/dataset/sketchify.py`) - which are the labels for the GAN and resemble the sketch a user can draw as an input.
 
-Weights can be downloaded from:
+Weights used on the generated maps can be downloaded from here:
+https://github.com/teletobbii/map-synth-ba/releases/tag/v0.1
 
 Topic description:
 ### Topic 2 - Map (Room/Terrain) Synthesis for Low-Poly 3D Scenes
