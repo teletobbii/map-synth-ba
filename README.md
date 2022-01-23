@@ -9,6 +9,10 @@ For the creation of data `https://github.com/pecarprimoz/procedural-gen-dipl` wa
 
 Weights used on the generated maps can be downloaded [here](https://github.com/teletobbii/map-synth-ba/releases/tag/v0.1)
 
+The entire dataset can be downloaded [here](https://github.com/teletobbii/map-synth-ba/releases/tag/v0.1data)
+
+
+
 The code to the finished project can be found here: [map-synth-ba/code/](https://github.com/teletobbii/map-synth-ba/tree/main/code). The scripts for the creation of the dataset creation as well as the creation of a traversability-map are under [map-synth-ba/code/scripts/dataset_creation/](https://github.com/teletobbii/map-synth-ba/tree/main/code/scripts/dataset_creation). 
 Scripts to post-process the generated output are found here: [map-synth-ba/code/scripts/post/](https://github.com/teletobbii/map-synth-ba/tree/main/code/scripts/post).
 
